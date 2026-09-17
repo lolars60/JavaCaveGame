@@ -95,6 +95,11 @@ public class Main {
                                 " for " + damage + " damage!"
                             );
 
+                            // Report the new critical-hit result so the player knows why damage increased.
+                            if (player.wasCriticalHit()) {
+                                System.out.println("Critical hit! The attack dealt double damage!");
+                            }
+
                             if (!target.isAlive()) {
                                 System.out.println("Goblin slain!");
                                 goblins.remove(targetIndex);

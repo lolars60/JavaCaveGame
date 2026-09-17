@@ -1,0 +1,23 @@
+What I Learned
+
+I have never seen a switch statement so i decided to look into that. A
+switch statement lets a Java program choose between several possible
+actions based on one value. Each possible value is written as a case,
+and the matching case is executed. In Main.java, the game uses
+switch(choice) to determine if a player attacks, defends, or uses a
+healing potion. The break keyword ends the matching case so the program
+does not continue into the next case. Switch is helpful here because it
+makes the code easier to read than it would be with many separate
+if-else statements. Sources: Oracle, "The switch Statement,"
+https://docs.oracle.com/javase/tutorial/java/nutsandbolts/switch.html;
+Oracle, "The Java Language Specification: The switch Statement,"
+https://docs.oracle.com/javase/specs/jls/se21/html/jls-14.html#jls-14.11.
+
+Program Modification
+
+I decided to add a critical hit feature to the game. Now each time a
+player attacks, there is a twenty percent chance that the weapon deals
+double the normal damage. I stored whether the latest attack was
+critical in Player so Main will display a message. I modified Player.java
+to calculate the random result and added a method that reports the
+result. I stole this idea from other games like Terraria.

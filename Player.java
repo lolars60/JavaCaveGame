@@ -14,17 +14,28 @@ public class Player extends Character {
     // Damage dealt when attacking
     private int weaponDamage;
 
+    // Tracks whether the player's most recent attack was a critical hit
+    private boolean criticalHit;
+
     // Creates a new player with starting stats
     public Player(int hp) {
         super(hp);
         this.id = NEXT_PLAYER_ID++;
         this.potions = 2;
         this.weaponDamage = 4; // Starter weapon damage
+        this.criticalHit = false;
     }
 
     // Returns the damage dealt by an attack
     public int attack() {
-        return weaponDamage;
+        // A critical hit has a 20 percent chance to double the normal damage.
+        criticalHit = Math.random() < 0.20;
+        return criticalHit ? weaponDamage * 2 : weaponDamage;
+    }
+
+    // Lets the game announce when the random critical-hit bonus occurred
+    public boolean wasCriticalHit() {
+        return criticalHit;
     }
 
     // Uses a healing potion to restore random HP
